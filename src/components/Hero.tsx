@@ -78,7 +78,7 @@ export default function Hero() {
           &nbsp;&nbsp;NORTH EAST
         </div>
 
-        {/* Headline — Bebas Neue */}
+        {/* Headline - Bebas Neue */}
         <h1
           className="leading-none select-none"
           style={{
@@ -90,7 +90,7 @@ export default function Hero() {
             className="block text-white"
             style={{ fontSize: "clamp(80px, 12vw, 160px)" }}
           >
-            SPICE HUT
+            SMOK'D N SMASH'D
           </span>
         </h1>
         <h2

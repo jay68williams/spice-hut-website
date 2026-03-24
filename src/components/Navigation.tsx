@@ -64,7 +64,7 @@ export default function Navigation() {
           className="font-heading text-white text-xl tracking-tight select-none"
           style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "20px", textDecoration: "none" }}
         >
-          Spice Hut
+          Smok'd N Smash'd
         </Link>
 
         {/* Location indicator */}
@@ -88,14 +88,14 @@ export default function Navigation() {
           </button>
         )}
 
-        {/* Centre nav links — desktop */}
+        {/* Centre nav links - desktop */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.label} href={link.href} label={link.label} />
           ))}
         </div>
 
-        {/* Right side — CTA + Hamburger */}
+        {/* Right side - CTA + Hamburger */}
         <div className="flex items-center gap-4">
           {/* CTA button */}
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.3, ease: EASE_EXPO }}>

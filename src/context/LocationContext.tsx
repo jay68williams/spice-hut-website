@@ -28,42 +28,42 @@ export const LOCATIONS: Location[] = [
     id: "newcastle",
     name: "Newcastle",
     address: "41 West Road, Newcastle upon Tyne, NE4 9PX",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "+44 191 272 7183",
   },
   {
     id: "sunderland",
     name: "Sunderland",
     address: "20 Olive Street, Sunderland, SR1 3PE",
-    hours: "12pm — 11pm daily",
+    hours: "12pm - 11pm daily",
     phone: "+44 191 597 3297",
   },
   {
     id: "hartlepool",
     name: "Hartlepool",
     address: "88 York Road, Hartlepool, TS26 8AB",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "+44 1429 866666",
   },
   {
     id: "south-shields",
     name: "South Shields",
     address: "38-40 Ocean Road, South Shields, NE33 2HZ",
-    hours: "5pm — 11pm (closed Fridays)",
+    hours: "5pm - 11pm (closed Fridays)",
     phone: "+44 191 524 2512",
   },
   {
     id: "whitley-bay",
     name: "Whitley Bay",
     address: "234 Whitley Road, Whitley Bay, NE26 2TA",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "info@spicehutwhitleybay.co.uk",
   },
   {
     id: "middlesbrough",
     name: "Middlesbrough",
     address: "TS1 District, Middlesbrough, TS1 3QW",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "Coming soon",
   },
 ];
@@ -95,7 +95,7 @@ export function LocationProvider({ children }: { children: ReactNode }) {
     } catch {
       // Ignore parse errors
     }
-    // No stored location — show picker after a brief delay
+    // No stored location - show picker after a brief delay
     const timer = setTimeout(() => setShowPicker(true), 800);
     return () => clearTimeout(timer);
   }, []);
@@ -187,7 +187,7 @@ function LocationPickerModal() {
                   lineHeight: 1.6,
                 }}
               >
-                Select your nearest Spice Hut to see opening hours and order.
+                Select your nearest Smok'd N Smash'd to see opening hours and order.
               </p>
             </div>
 

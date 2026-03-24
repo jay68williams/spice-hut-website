@@ -53,7 +53,7 @@ export default function MenuSidebar({
                   : "1px solid transparent",
               }}
             >
-              {/* Coral left accent — desktop only */}
+              {/* Coral left accent - desktop only */}
               {isActive && (
                 <motion.div
                   layoutId="categoryIndicator"

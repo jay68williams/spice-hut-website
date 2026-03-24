@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
-   SPICE HUT — FULL MENU DATA
-   Based on the Spice Hut Northeast
+   SMOK'D N SMASH'D - FULL MENU DATA
+   Based on the Smok'd N Smash'd Northeast
    Comprehensive Audit
    ═══════════════════════════════════════════ */
 
@@ -20,7 +20,7 @@ export interface MenuCategory {
 }
 
 export const CATEGORIES: MenuCategory[] = [
-  { id: "special-box-meals", name: "Special Box Meals", description: "Signature combo boxes loaded with the best of Spice Hut" },
+  { id: "special-box-meals", name: "Special Box Meals", description: "Signature combo boxes loaded with the best of Smok'd N Smash'd" },
   { id: "angus-smash-burgers", name: "Angus Smash Burgers", description: "6oz Angus beef patties, smashed & seared to perfection" },
   { id: "stack-burgers", name: "Stack Burgers", description: "Towering stacked patties, maximum flavour" },
   { id: "chicken-burgers", name: "Chicken, Fish & Veggie Burgers", description: "Crispy fillets, grilled thighs & plant-based options" },
@@ -41,7 +41,7 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: "bx-1", name: "House Special Box", description: "3 Lamb Ribs OR Chops, Mix Doner, 4 Peri Grilled Wings, Smash Burger, Nacho Fries, and Drinks.", price: 24.99, category: "special-box-meals", badge: "Most Popular" },
   { id: "bx-2", name: "Loaded Box", description: "Smash Burger, 2 Lamb Chops/Ribs, 2 Wild Mango Wings, Mix Doner, and Nacho Cheesy Fries.", price: 21.99, category: "special-box-meals" },
   { id: "bx-3", name: "Philly Box Meal", description: "Philly Ribeye Steak, Hot & Creamy Doner, Crispy Chicken Loaded Fries, and 2 Wild Mango Wings.", price: 19.99, category: "special-box-meals" },
-  { id: "bx-4", name: "Spice Hut Box", description: "1/4 Chicken, Lamb Doner, Cheeseburger, 3 Naga Wings, and Chips/Fries.", price: 17.99, category: "special-box-meals" },
+  { id: "bx-4", name: "Smok'd N Smash'd Box", description: "1/4 Chicken, Lamb Doner, Cheeseburger, 3 Naga Wings, and Chips/Fries.", price: 17.99, category: "special-box-meals" },
   { id: "bx-5", name: "Mix Grill Platter", description: "2 Lamb Chops, 2 Shish Kebabs, 1/4 Peri Chicken, 4 Peri Wings, Fries, and Naan.", price: 22.99, category: "special-box-meals", badge: "Sharing" },
 
   /* ── Angus Smash Burgers ────────────────── */
@@ -81,11 +81,11 @@ export const MENU_ITEMS: MenuItem[] = [
   /* ── Grill & Philly Steak ──────────────── */
   { id: "gr-1", name: "Philly Ribeye Cheese Steak", description: "Finely cut ribeye steak with grilled peppers, onions, and creamy cheese sauce on a soft potato roll.", price: 11.99, category: "grill-philly", badge: "Premium" },
   { id: "gr-2", name: "Steak and Nacho Fries Tray", description: "70g ribeye steak served over loaded nacho fries.", price: 10.99, category: "grill-philly" },
-  { id: "gr-3", name: "Lamb Chops (5pc) — Plain", description: "5 premium lamb chops, simply seasoned and charcoal-grilled.", price: 13.99, category: "grill-philly" },
-  { id: "gr-4", name: "Lamb Chops (5pc) — Naga", description: "5 premium lamb chops glazed in fiery Naga chilli.", price: 14.49, category: "grill-philly", badge: "🔥 Hot" },
-  { id: "gr-5", name: "Lamb Chops (5pc) — BBQ", description: "5 premium lamb chops with smoky BBQ glaze.", price: 14.49, category: "grill-philly" },
-  { id: "gr-6", name: "Lamb Ribs (5pc) — Plain", description: "5 juicy lamb ribs, simply seasoned and charcoal-grilled.", price: 12.99, category: "grill-philly" },
-  { id: "gr-7", name: "Lamb Ribs (5pc) — Naga", description: "5 juicy lamb ribs glazed in fiery Naga chilli.", price: 13.49, category: "grill-philly" },
+  { id: "gr-3", name: "Lamb Chops (5pc) - Plain", description: "5 premium lamb chops, simply seasoned and charcoal-grilled.", price: 13.99, category: "grill-philly" },
+  { id: "gr-4", name: "Lamb Chops (5pc) - Naga", description: "5 premium lamb chops glazed in fiery Naga chilli.", price: 14.49, category: "grill-philly", badge: "🔥 Hot" },
+  { id: "gr-5", name: "Lamb Chops (5pc) - BBQ", description: "5 premium lamb chops with smoky BBQ glaze.", price: 14.49, category: "grill-philly" },
+  { id: "gr-6", name: "Lamb Ribs (5pc) - Plain", description: "5 juicy lamb ribs, simply seasoned and charcoal-grilled.", price: 12.99, category: "grill-philly" },
+  { id: "gr-7", name: "Lamb Ribs (5pc) - Naga", description: "5 juicy lamb ribs glazed in fiery Naga chilli.", price: 13.49, category: "grill-philly" },
   { id: "gr-8", name: "Peri Peri Whole Chicken", description: "Whole charcoal-grilled chicken with peri peri seasoning.", price: 14.99, category: "grill-philly" },
   { id: "gr-9", name: "Peri Peri Half Chicken", description: "Half charcoal-grilled chicken with peri peri seasoning.", price: 9.99, category: "grill-philly" },
   { id: "gr-10", name: "Peri Peri Quarter Chicken", description: "Quarter charcoal-grilled chicken with peri peri seasoning.", price: 6.99, category: "grill-philly" },
@@ -153,7 +153,7 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: "sc-2", name: "Chilli Sauce", description: "Medium heat chilli sauce.", price: 0.70, category: "sauces" },
   { id: "sc-3", name: "BBQ Sauce", description: "Smoky BBQ dipping sauce.", price: 0.70, category: "sauces" },
   { id: "sc-4", name: "Sriracha Mayo", description: "Creamy sriracha mayo.", price: 0.70, category: "sauces" },
-  { id: "sc-5", name: "House Sauce", description: "Spice Hut signature house sauce.", price: 0.70, category: "sauces" },
+  { id: "sc-5", name: "House Sauce", description: "Smok'd N Smash'd signature house sauce.", price: 0.70, category: "sauces" },
   { id: "sc-6", name: "Naga Sauce", description: "Extra hot naga chilli sauce.", price: 0.70, category: "sauces" },
   { id: "sc-7", name: "Peri Peri Sauce", description: "Medium-hot peri peri sauce.", price: 0.70, category: "sauces" },
 ];

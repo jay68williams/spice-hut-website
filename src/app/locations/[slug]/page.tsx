@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!location) return { title: "Location Not Found" };
 
   return {
-    title: `Spice Hut ${location.name} — Hours, Menu & Contact`,
+    title: `Smok'd N Smash'd ${location.name} - Hours, Menu & Contact`,
     description: location.description,
     openGraph: {
-      title: `Spice Hut ${location.name}`,
+      title: `Smok'd N Smash'd ${location.name}`,
       description: location.description,
     },
   };

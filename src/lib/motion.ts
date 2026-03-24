@@ -4,7 +4,7 @@ import { useReducedMotion } from "framer-motion";
 import type { Transition } from "framer-motion";
 
 /**
- * Default easing curve from the design brief — ease-out-expo
+ * Default easing curve from the design brief - ease-out-expo
  * "starts fast and settles gently. It feels expensive."
  */
 export const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];

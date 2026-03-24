@@ -20,7 +20,7 @@ export const LOCATIONS: LocationData[] = [
     slug: "newcastle",
     name: "Newcastle",
     address: "41 West Road, Newcastle upon Tyne, NE4 9PX",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "+44 191 272 7183",
     badge: "Flagship",
     email: "info@spicehutnewcastle.co.uk",
@@ -39,13 +39,13 @@ export const LOCATIONS: LocationData[] = [
     rating: 4.66,
     reviewCount: "1,921+",
     description:
-      "The original Spice Hut — our flagship location on West Road. The one that started it all. Known for its vibrant atmosphere and the full Spice Hut experience.",
+      "The original Smok'd N Smash'd - our flagship location on West Road. The one that started it all. Known for its vibrant atmosphere and the full Smok'd N Smash'd experience.",
   },
   {
     slug: "sunderland",
     name: "Sunderland",
     address: "20 Olive Street, Sunderland, SR1 3PE",
-    hours: "12pm — 11pm daily",
+    hours: "12pm - 11pm daily",
     phone: "+44 191 597 3297",
     email: "info@spicehutsunderland.co.uk",
     lat: 54.9069,
@@ -63,13 +63,13 @@ export const LOCATIONS: LocationData[] = [
     rating: 4.6,
     reviewCount: "3,312+",
     description:
-      "Our Sunderland branch on Olive Street offers extended lunchtime hours — perfect for when the craving hits early. Full menu available from midday.",
+      "Our Sunderland branch on Olive Street offers extended lunchtime hours - perfect for when the craving hits early. Full menu available from midday.",
   },
   {
     slug: "hartlepool",
     name: "Hartlepool",
     address: "88 York Road, Hartlepool, TS26 8AB",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "+44 1429 866666",
     badge: "Best Takeaway 2024",
     email: "info@spicehuthartlepool.co.uk",
@@ -94,7 +94,7 @@ export const LOCATIONS: LocationData[] = [
     slug: "south-shields",
     name: "South Shields",
     address: "38-40 Ocean Road, South Shields, NE33 2HZ",
-    hours: "5pm — 11pm (closed Fridays)",
+    hours: "5pm - 11pm (closed Fridays)",
     phone: "+44 191 524 2512",
     email: "info@spicehutsouthshields.co.uk",
     lat: 54.9980,
@@ -118,7 +118,7 @@ export const LOCATIONS: LocationData[] = [
     slug: "whitley-bay",
     name: "Whitley Bay",
     address: "234 Whitley Road, Whitley Bay, NE26 2TA",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "",
     email: "info@spicehutwhitleybay.co.uk",
     lat: 55.0467,
@@ -136,13 +136,13 @@ export const LOCATIONS: LocationData[] = [
     rating: 4.2,
     reviewCount: "84+",
     description:
-      "Our coastal branch in Whitley Bay — serving the seaside community with the full Spice Hut menu for takeaway and delivery.",
+      "Our coastal branch in Whitley Bay - serving the seaside community with the full Smok'd N Smash'd menu for takeaway and delivery.",
   },
   {
     slug: "middlesbrough",
     name: "Middlesbrough",
     address: "TS1 District, Middlesbrough, TS1 3QW",
-    hours: "5pm — 11pm daily",
+    hours: "5pm - 11pm daily",
     phone: "",
     badge: "Coming soon",
     email: "info@spicehutmiddlesbrough.co.uk",
@@ -159,7 +159,7 @@ export const LOCATIONS: LocationData[] = [
     ],
     features: ["Coming 2025"],
     description:
-      "Our newest addition to the Spice Hut family. Middlesbrough, your Spice Hut is coming soon — watch this space.",
+      "Our newest addition to the Smok'd N Smash'd family. Middlesbrough, your Smok'd N Smash'd is coming soon - watch this space.",
   },
 ];
 

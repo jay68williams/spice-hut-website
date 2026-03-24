@@ -58,7 +58,7 @@ export default function SocialGrid() {
               lineHeight: 1.7,
             }}
           >
-            We don&apos;t just serve food — we create content. Follow the journey
+            We don&apos;t just serve food - we create content. Follow the journey
             across TikTok and Instagram.
           </p>
         </motion.div>

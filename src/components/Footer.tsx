@@ -74,7 +74,7 @@ export default function Footer() {
                 color: "var(--text-primary)",
               }}
             >
-              Spice Hut
+              Smok'd N Smash'd
             </h3>
             <p
               className="mb-6 max-w-xs"
@@ -180,7 +180,7 @@ export default function Footer() {
               color: "var(--text-muted)",
             }}
           >
-            © 2026 Spice Hut. All rights reserved.
+            © 2026 Smok'd N Smash'd. All rights reserved.
           </p>
           <p
             style={{

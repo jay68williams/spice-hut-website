@@ -134,7 +134,7 @@ export default function LocationPageClient({
                   lineHeight: 1.1,
                 }}
               >
-                Spice Hut {location.name}
+                Smok'd N Smash'd {location.name}
               </h1>
               {location.badge && (
                 <span
@@ -246,7 +246,7 @@ export default function LocationPageClient({
                       filter: "invert(0.9) hue-rotate(180deg) saturate(0.4) brightness(0.8)",
                     }}
                     loading="lazy"
-                    title={`Map of Spice Hut ${location.name}`}
+                    title={`Map of Smok'd N Smash'd ${location.name}`}
                     allowFullScreen
                   />
                   {/* Map overlay gradient at bottom */}
@@ -808,7 +808,7 @@ export default function LocationPageClient({
                         Message
                       </label>
                       <textarea
-                        placeholder={`Message to Spice Hut ${location.name}...`}
+                        placeholder={`Message to Smok'd N Smash'd ${location.name}...`}
                         required
                         rows={4}
                         value={formState.message}

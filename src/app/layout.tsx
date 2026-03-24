@@ -3,11 +3,11 @@ import Providers from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Spice Hut — Built Different",
+  title: "Smok'd N Smash'd - Built Different",
   description:
     "Bold flavours, premium vibes. 8 locations across the North East. Smash burgers, loaded fries, and food that hits different.",
   openGraph: {
-    title: "Spice Hut — Built Different",
+    title: "Smok'd N Smash'd - Built Different",
     description:
       "Bold flavours, premium vibes. 8 locations across the North East.",
     type: "website",

@@ -36,7 +36,7 @@ export default function OrderPage() {
           className="text-white text-xl tracking-tight select-none"
           style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "20px", textDecoration: "none" }}
         >
-          Spice Hut
+          Smok'd N Smash'd
         </Link>
 
         <div className="flex items-center gap-4">
@@ -101,7 +101,7 @@ export default function OrderPage() {
         {/* Three-column layout */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Left — Categories sidebar */}
+            {/* Left - Categories sidebar */}
             <div className="md:w-56 flex-shrink-0 md:sticky md:top-24 md:self-start">
               <MenuSidebar
                 categories={CATEGORIES}
@@ -110,7 +110,7 @@ export default function OrderPage() {
               />
             </div>
 
-            {/* Center — Menu items */}
+            {/* Center - Menu items */}
             <div className="flex-1 min-w-0">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -157,7 +157,7 @@ export default function OrderPage() {
               </AnimatePresence>
             </div>
 
-            {/* Right — Order summary (desktop) */}
+            {/* Right - Order summary (desktop) */}
             <div className="hidden md:block md:w-80 flex-shrink-0 md:sticky md:top-24 md:self-start">
               <OrderSummary onCheckout={() => setCheckoutOpen(true)} />
             </div>
