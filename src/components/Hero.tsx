@@ -71,9 +71,9 @@ export default function Hero() {
           }}
         >
           <span style={{ color: "var(--accent)" }}>·</span>
-          &nbsp;&nbsp;EST. 2018&nbsp;&nbsp;
+          &nbsp;&nbsp;EST. 2020&nbsp;&nbsp;
           <span style={{ color: "var(--accent)" }}>·</span>
-          &nbsp;&nbsp;8 LOCATIONS&nbsp;&nbsp;
+          &nbsp;&nbsp;6 LOCATIONS&nbsp;&nbsp;
           <span style={{ color: "var(--accent)" }}>·</span>
           &nbsp;&nbsp;NORTH EAST
         </div>
@@ -90,18 +90,20 @@ export default function Hero() {
             className="block text-white"
             style={{ fontSize: "clamp(80px, 12vw, 160px)" }}
           >
-            BUILT
-          </span>
-          <span
-            className="block"
-            style={{
-              fontSize: "clamp(80px, 12vw, 160px)",
-              color: "var(--accent)",
-            }}
-          >
-            DIFFERENT.
+            SPICE HUT
           </span>
         </h1>
+        <h2
+          className="leading-none select-none mt-2"
+          style={{
+            fontFamily: "'Bebas Neue', system-ui, sans-serif",
+            letterSpacing: "0.02em",
+            fontSize: "clamp(36px, 5vw, 64px)",
+            color: "var(--accent)",
+          }}
+        >
+          BUILT DIFFERENT.
+        </h2>
 
         {/* Subtitle */}
         <p
@@ -109,7 +111,7 @@ export default function Hero() {
           style={{
             fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: "16px",
-            color: "var(--text-secondary)",
+            color: "#FFFFFF",
             lineHeight: 1.6,
           }}
         >

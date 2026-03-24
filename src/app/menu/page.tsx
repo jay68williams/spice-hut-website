@@ -4,8 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { EASE_EXPO } from "@/lib/motion";
-import { CATEGORIES, getItemsByCategory } from "@/lib/menu-data";
-import MenuItemCard from "@/components/order/MenuItemCard";
+import { CATEGORIES, MENU_ITEMS, getItemsByCategory } from "@/lib/menu-data";
+import type { MenuItem } from "@/lib/menu-data";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0].id);
@@ -14,62 +16,9 @@ export default function MenuPage() {
 
   return (
     <>
-      {/* Top bar */}
-      <header
-        className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-6 md:px-12"
-        style={{
-          background: "rgba(10, 10, 10, 0.88)",
-          backdropFilter: "blur(24px) saturate(180%)",
-          WebkitBackdropFilter: "blur(24px) saturate(180%)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-        }}
-      >
-        <Link
-          href="/"
-          className="text-white text-xl tracking-tight select-none"
-          style={{
-            fontFamily: "'Fraunces', Georgia, serif",
-            fontSize: "20px",
-            textDecoration: "none",
-          }}
-        >
-          Spice Hut
-        </Link>
+      <Navigation />
 
-        <div className="flex items-center gap-4">
-          <Link
-            href="/"
-            className="text-xs font-semibold tracking-wider hidden md:inline-block"
-            style={{
-              fontFamily: "'DM Sans', system-ui, sans-serif",
-              color: "var(--text-secondary)",
-              textDecoration: "none",
-              letterSpacing: "0.06em",
-            }}
-          >
-            ← HOME
-          </Link>
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-            <Link
-              href="/order"
-              className="inline-flex text-white text-xs font-semibold tracking-wider px-6 py-2.5 rounded-full select-none"
-              style={{
-                background: "var(--accent)",
-                fontFamily: "'DM Sans', system-ui, sans-serif",
-                letterSpacing: "0.06em",
-                textDecoration: "none",
-              }}
-            >
-              ORDER NOW
-            </Link>
-          </motion.div>
-        </div>
-      </header>
-
-      <main
-        className="pt-16 min-h-screen"
-        style={{ background: "var(--bg-base)" }}
-      >
+      <main className="pt-20 min-h-screen" style={{ background: "var(--bg-base)" }}>
         {/* Hero header */}
         <div
           className="px-6 md:px-12 py-12 md:py-20"
@@ -98,25 +47,37 @@ export default function MenuPage() {
               >
                 The full menu.
               </h1>
-              <p
-                className="max-w-lg"
-                style={{
-                  fontFamily: "'DM Sans', system-ui, sans-serif",
-                  fontSize: "16px",
-                  color: "var(--text-secondary)",
-                  lineHeight: 1.7,
-                }}
-              >
-                Everything on our menu, built to make you come back. No filler.
-                No compromises. Just food that slaps.
-              </p>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <p
+                  className="max-w-lg"
+                  style={{
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
+                    fontSize: "16px",
+                    color: "var(--text-secondary)",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Everything on our menu, built to make you come back. No filler.
+                  No compromises. Just food that slaps.
+                </p>
+                <span
+                  style={{
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
+                    fontSize: "13px",
+                    color: "var(--text-muted)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {MENU_ITEMS.length} items across {CATEGORIES.length} categories
+                </span>
+              </div>
             </motion.div>
           </div>
         </div>
 
         {/* Category tabs */}
         <div
-          className="sticky top-16 z-30 px-6 md:px-12 py-4"
+          className="sticky top-[72px] z-30 px-6 md:px-12 py-4"
           style={{
             background: "rgba(8, 8, 8, 0.92)",
             backdropFilter: "blur(16px)",
@@ -191,7 +152,7 @@ export default function MenuPage() {
               {/* Items grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {currentItems.map((item) => (
-                  <MenuItemCard key={item.id} item={item} />
+                  <BrowseMenuCard key={item.id} item={item} />
                 ))}
               </div>
             </motion.div>
@@ -201,9 +162,7 @@ export default function MenuPage() {
         {/* Bottom CTA */}
         <div
           className="px-6 md:px-12 py-16 text-center"
-          style={{
-            background: "var(--accent)",
-          }}
+          style={{ background: "var(--accent)" }}
         >
           <h2
             className="mb-4"
@@ -246,6 +205,126 @@ export default function MenuPage() {
           </motion.div>
         </div>
       </main>
+
+      <Footer />
     </>
+  );
+}
+
+/* ─── Browse-only Menu Card (with subtle Order Now) ─── */
+function BrowseMenuCard({ item }: { item: MenuItem }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: EASE_EXPO }}
+      className="relative rounded-[16px] overflow-hidden group"
+      style={{
+        background: "var(--bg-surface)",
+        border: "1px solid var(--border)",
+        boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
+        transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.25)";
+        e.currentTarget.style.boxShadow =
+          "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(232, 100, 90, 0.1)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.06)";
+        e.currentTarget.style.boxShadow = "0 4px 16px rgba(0, 0, 0, 0.2)";
+      }}
+    >
+      <div className="p-5">
+        {/* Badge */}
+        {item.badge && (
+          <div className="mb-2">
+            <span
+              className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide"
+              style={{
+                background: "rgba(232, 100, 90, 0.15)",
+                color: "var(--accent)",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+              }}
+            >
+              {item.badge}
+            </span>
+          </div>
+        )}
+
+        {/* Top row: name + price */}
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h4
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "16px",
+              fontWeight: 600,
+              color: "var(--text-primary)",
+              lineHeight: 1.3,
+            }}
+          >
+            {item.name}
+          </h4>
+          <span
+            className="flex-shrink-0"
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "var(--accent)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            £{item.price.toFixed(2)}
+          </span>
+        </div>
+
+        {/* Description */}
+        <p
+          className="mb-4"
+          style={{
+            fontFamily: "'DM Sans', system-ui, sans-serif",
+            fontSize: "13px",
+            color: "var(--text-secondary)",
+            lineHeight: 1.5,
+          }}
+        >
+          {item.description}
+        </p>
+
+        {/* Subtle Order Now link */}
+        <Link
+          href="/order"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold tracking-wider transition-all duration-300 opacity-60 group-hover:opacity-100"
+          style={{
+            fontFamily: "'DM Sans', system-ui, sans-serif",
+            color: "var(--accent)",
+            background: "rgba(232, 100, 90, 0.08)",
+            border: "1px solid rgba(232, 100, 90, 0.12)",
+            textDecoration: "none",
+            letterSpacing: "0.06em",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(232, 100, 90, 0.15)";
+            e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.3)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(232, 100, 90, 0.08)";
+            e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.12)";
+          }}
+        >
+          Order Now
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path
+              d="M3 1.5L7 5L3 8.5"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      </div>
+    </motion.div>
   );
 }

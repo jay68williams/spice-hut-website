@@ -10,6 +10,7 @@ export default function CTABanner() {
 
   return (
     <section
+      id="about"
       ref={ref}
       className="relative py-24 md:py-32 overflow-hidden"
       style={{ background: "var(--accent)" }}

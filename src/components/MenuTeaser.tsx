@@ -104,7 +104,7 @@ export default function MenuTeaser() {
           className="mt-14 text-center"
         >
           <motion.a
-            href="#"
+            href="/menu"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.3, ease: EASE_EXPO }}

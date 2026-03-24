@@ -8,9 +8,9 @@ import { useLocation } from "@/context/LocationContext";
 
 const NAV_LINKS = [
   { label: "MENU", href: "/menu" },
-  { label: "LOCATIONS", href: "#locations" },
-  { label: "ABOUT", href: "#about" },
-  { label: "SOCIALS", href: "#socials" },
+  { label: "LOCATIONS", href: "/#locations" },
+  { label: "ABOUT", href: "/#about" },
+  { label: "SOCIALS", href: "/#socials" },
 ];
 
 export default function Navigation() {
