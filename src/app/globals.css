@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ═══════════════════════════════════════════
+   SPICE HUT — DESIGN SYSTEM
+   Colour tokens, typography, shadows, and
+   depth system from the design brief v2
+   ═══════════════════════════════════════════ */
 
+/* ── Tailwind v4 Theme Extension ─────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colour tokens */
+  --color-bg-base: #080808;
+  --color-bg-surface: #111111;
+  --color-bg-elevated: #181818;
+  --color-bg-light: #F5F2EE;
+  --color-accent: #E8645A;
+  --color-accent-glow: rgba(232, 100, 90, 0.18);
+  --color-text-primary: #F0F0F0;
+  --color-text-secondary: #888888;
+  --color-text-muted: #444444;
+  --color-border-default: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(232, 100, 90, 0.4);
+
+  /* Font families */
+  --font-display: 'Bebas Neue', system-ui, sans-serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Custom shadows — Layer system */
+  --shadow-layer-1: 0 8px 32px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-layer-2: 0 24px 64px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(232, 100, 90, 0.15);
+  --shadow-light-card: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── CSS Custom Properties ────────────────── */
+:root {
+  --bg-base: #080808;
+  --bg-surface: #111111;
+  --bg-elevated: #181818;
+  --bg-light: #F5F2EE;
+  --accent: #E8645A;
+  --accent-glow: rgba(232, 100, 90, 0.18);
+  --text-primary: #F0F0F0;
+  --text-secondary: #888888;
+  --text-muted: #444444;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(232, 100, 90, 0.4);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Base Styles ──────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Noise Texture Overlay ────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Typography Utilities ─────────────────── */
+.font-display {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Eyebrow Label ────────────────────────── */
+.eyebrow {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: '·';
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ── Heading Gradient ─────────────────────── */
+.heading-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.75) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism ────────────────────────── */
+.glass {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Floating Card Base ───────────────────── */
+.floating-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-layer-1);
+  transition: box-shadow 0.4s var(--ease-expo),
+              border-color 0.4s var(--ease-expo);
+}
+
+.floating-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-layer-2);
+}
+
+/* Hover glow behind card */
+.floating-card .card-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  background: radial-gradient(ellipse at center, rgba(232, 100, 90, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* ── Image Treatment ──────────────────────── */
+.food-image {
+  filter: saturate(1.15) brightness(0.92) contrast(1.05);
+}
+
+.food-image-overlay {
+  background: linear-gradient(to bottom, transparent 50%, var(--bg-surface) 100%);
+}
+
+/* ── Section Radial Glow ──────────────────── */
+.section-glow {
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232, 100, 90, 0.12) 0%, transparent 70%), var(--bg-base);
+}
+
+.section-glow-bottom {
+  background: radial-gradient(ellipse 80% 50% at 50% 110%, rgba(232, 100, 90, 0.08) 0%, transparent 70%), var(--bg-base);
+}
+
+/* ── Reduced Motion ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Selection Color ──────────────────────── */
+::selection {
+  background: rgba(232, 100, 90, 0.3);
+  color: #fff;
+}
+
+/* ── Scrollbar ────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }
