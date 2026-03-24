@@ -65,7 +65,7 @@ export default function LocationPageClient({
         className="relative pt-32 pb-16 md:pt-40 md:pb-24"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232, 100, 90, 0.1) 0%, transparent 60%), var(--bg-base)",
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(239, 107, 95, 0.1) 0%, transparent 60%), var(--bg-base)",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -143,7 +143,7 @@ export default function LocationPageClient({
                     background:
                       isComingSoon
                         ? "rgba(100, 200, 100, 0.15)"
-                        : "rgba(232, 100, 90, 0.15)",
+                        : "rgba(239, 107, 95, 0.15)",
                     color: isComingSoon ? "#4ade80" : "var(--accent)",
                     fontFamily: "'DM Sans', system-ui, sans-serif",
                   }}
@@ -268,7 +268,7 @@ export default function LocationPageClient({
                   <div className="flex items-center gap-3">
                     <div
                       className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: "rgba(232, 100, 90, 0.12)" }}
+                      style={{ background: "rgba(239, 107, 95, 0.12)" }}
                     >
                       <svg
                         width="18"
@@ -278,14 +278,14 @@ export default function LocationPageClient({
                       >
                         <path
                           d="M8 1.5C5.1 1.5 2.75 3.85 2.75 6.75C2.75 10.5 8 14.5 8 14.5C8 14.5 13.25 10.5 13.25 6.75C13.25 3.85 10.9 1.5 8 1.5Z"
-                          stroke="#E8645A"
+                          stroke="#EF6B5F"
                           strokeWidth="1.2"
                         />
                         <circle
                           cx="8"
                           cy="6.75"
                           r="2"
-                          stroke="#E8645A"
+                          stroke="#EF6B5F"
                           strokeWidth="1.2"
                         />
                       </svg>
@@ -310,9 +310,9 @@ export default function LocationPageClient({
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0"
                     style={{
-                      background: "rgba(232, 100, 90, 0.15)",
+                      background: "rgba(239, 107, 95, 0.15)",
                       color: "var(--accent)",
-                      border: "1px solid rgba(232, 100, 90, 0.2)",
+                      border: "1px solid rgba(239, 107, 95, 0.2)",
                       fontFamily: "'DM Sans', system-ui, sans-serif",
                       textDecoration: "none",
                     }}
@@ -334,7 +334,7 @@ export default function LocationPageClient({
                 <div className="flex items-center gap-3 mb-6">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ background: "rgba(232, 100, 90, 0.12)" }}
+                    style={{ background: "rgba(239, 107, 95, 0.12)" }}
                   >
                     <svg
                       width="20"
@@ -346,12 +346,12 @@ export default function LocationPageClient({
                         cx="8"
                         cy="8"
                         r="6.5"
-                        stroke="#E8645A"
+                        stroke="#EF6B5F"
                         strokeWidth="1.2"
                       />
                       <path
                         d="M8 4.5V8L10.5 9.5"
-                        stroke="#E8645A"
+                        stroke="#EF6B5F"
                         strokeWidth="1.2"
                         strokeLinecap="round"
                       />
@@ -379,10 +379,10 @@ export default function LocationPageClient({
                         className="flex items-center justify-between py-3 px-4 rounded-xl"
                         style={{
                           background: isToday
-                            ? "rgba(232, 100, 90, 0.08)"
+                            ? "rgba(239, 107, 95, 0.08)"
                             : "transparent",
                           border: isToday
-                            ? "1px solid rgba(232, 100, 90, 0.15)"
+                            ? "1px solid rgba(239, 107, 95, 0.15)"
                             : "1px solid transparent",
                         }}
                       >
@@ -402,8 +402,8 @@ export default function LocationPageClient({
                             <span
                               className="text-[10px] px-2 py-0.5 rounded-full"
                               style={{
-                                background: "rgba(232, 100, 90, 0.2)",
-                                color: "#E8645A",
+                                background: "rgba(239, 107, 95, 0.2)",
+                                color: "#EF6B5F",
                                 fontWeight: 700,
                                 letterSpacing: "0.05em",
                               }}
@@ -452,7 +452,7 @@ export default function LocationPageClient({
                 <div className="flex items-center gap-3 mb-6">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ background: "rgba(232, 100, 90, 0.12)" }}
+                    style={{ background: "rgba(239, 107, 95, 0.12)" }}
                   >
                     <svg
                       width="18"
@@ -462,7 +462,7 @@ export default function LocationPageClient({
                     >
                       <path
                         d="M14.5 11.08V13.08C14.5 13.62 14.06 14.06 13.52 14.08C10.18 14.36 7.04 13.48 4.44 11.8C3.68 11.28 2.98 10.68 2.36 10.02C1.68 9.3 1.08 8.5 0.58 7.64C-0.34 5.96 -0.5 4.08 0.56 2.58C0.82 2.22 1.22 2 1.66 2H3.66C4.08 2 4.46 2.28 4.56 2.7L4.98 4.54C5.06 4.88 4.94 5.24 4.68 5.46L3.72 6.26C4.8 8.46 6.58 10.24 8.78 11.32L9.58 10.36C9.8 10.1 10.16 9.98 10.5 10.06L12.34 10.48C12.76 10.58 13.04 10.96 13.04 11.38"
-                        stroke="#E8645A"
+                        stroke="#EF6B5F"
                         strokeWidth="1.2"
                         strokeLinecap="round"
                       />
@@ -608,7 +608,7 @@ export default function LocationPageClient({
                 <div className="flex items-center gap-3 mb-6">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
-                    style={{ background: "rgba(232, 100, 90, 0.12)" }}
+                    style={{ background: "rgba(239, 107, 95, 0.12)" }}
                   >
                     <svg
                       width="18"
@@ -622,12 +622,12 @@ export default function LocationPageClient({
                         width="12"
                         height="9"
                         rx="2"
-                        stroke="#E8645A"
+                        stroke="#EF6B5F"
                         strokeWidth="1.2"
                       />
                       <path
                         d="M2 5.5L8 9L14 5.5"
-                        stroke="#E8645A"
+                        stroke="#EF6B5F"
                         strokeWidth="1.2"
                       />
                     </svg>
@@ -700,9 +700,9 @@ export default function LocationPageClient({
                         }}
                         onFocus={(e) => {
                           e.currentTarget.style.borderColor =
-                            "rgba(232, 100, 90, 0.4)";
+                            "rgba(239, 107, 95, 0.4)";
                           e.currentTarget.style.boxShadow =
-                            "0 0 0 3px rgba(232, 100, 90, 0.08)";
+                            "0 0 0 3px rgba(239, 107, 95, 0.08)";
                         }}
                         onBlur={(e) => {
                           e.currentTarget.style.borderColor =
@@ -742,9 +742,9 @@ export default function LocationPageClient({
                         }}
                         onFocus={(e) => {
                           e.currentTarget.style.borderColor =
-                            "rgba(232, 100, 90, 0.4)";
+                            "rgba(239, 107, 95, 0.4)";
                           e.currentTarget.style.boxShadow =
-                            "0 0 0 3px rgba(232, 100, 90, 0.08)";
+                            "0 0 0 3px rgba(239, 107, 95, 0.08)";
                         }}
                         onBlur={(e) => {
                           e.currentTarget.style.borderColor =
@@ -783,9 +783,9 @@ export default function LocationPageClient({
                         }}
                         onFocus={(e) => {
                           e.currentTarget.style.borderColor =
-                            "rgba(232, 100, 90, 0.4)";
+                            "rgba(239, 107, 95, 0.4)";
                           e.currentTarget.style.boxShadow =
-                            "0 0 0 3px rgba(232, 100, 90, 0.08)";
+                            "0 0 0 3px rgba(239, 107, 95, 0.08)";
                         }}
                         onBlur={(e) => {
                           e.currentTarget.style.borderColor =
@@ -828,9 +828,9 @@ export default function LocationPageClient({
                         }}
                         onFocus={(e) => {
                           e.currentTarget.style.borderColor =
-                            "rgba(232, 100, 90, 0.4)";
+                            "rgba(239, 107, 95, 0.4)";
                           e.currentTarget.style.boxShadow =
-                            "0 0 0 3px rgba(232, 100, 90, 0.08)";
+                            "0 0 0 3px rgba(239, 107, 95, 0.08)";
                         }}
                         onBlur={(e) => {
                           e.currentTarget.style.borderColor =
@@ -847,7 +847,7 @@ export default function LocationPageClient({
                         background:
                           formStatus === "sent"
                             ? "rgba(74, 222, 128, 0.15)"
-                            : "linear-gradient(135deg, #E8645A 0%, #d4524a 100%)",
+                            : "linear-gradient(135deg, #EF6B5F 0%, #d4524a 100%)",
                         color: formStatus === "sent" ? "#4ade80" : "#fff",
                         fontFamily: "'DM Sans', system-ui, sans-serif",
                         fontSize: "15px",
@@ -875,7 +875,7 @@ export default function LocationPageClient({
         className="relative py-20"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(232, 100, 90, 0.06) 0%, transparent 70%), var(--bg-base)",
+            "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(239, 107, 95, 0.06) 0%, transparent 70%), var(--bg-base)",
           borderTop: "1px solid var(--border)",
         }}
       >
@@ -925,7 +925,7 @@ export default function LocationPageClient({
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor =
-                      "rgba(232, 100, 90, 0.3)";
+                      "rgba(239, 107, 95, 0.3)";
                     e.currentTarget.style.transform = "translateY(-4px)";
                     e.currentTarget.style.boxShadow =
                       "0 16px 48px rgba(0,0,0,0.6)";

@@ -59,7 +59,7 @@ export default function StatsBar() {
       className="relative py-20 md:py-24"
       style={{
         background:
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232, 100, 90, 0.12) 0%, transparent 70%), var(--bg-base)",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(239, 107, 95, 0.12) 0%, transparent 70%), var(--bg-base)",
         borderTop: "1px solid var(--border)",
         borderBottom: "1px solid var(--border)",
       }}

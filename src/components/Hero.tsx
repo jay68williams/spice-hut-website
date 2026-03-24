@@ -47,7 +47,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(232, 100, 90, 0.08) 0%, transparent 70%)",
+              "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(239, 107, 95, 0.08) 0%, transparent 70%)",
           }}
         />
       </motion.div>
@@ -141,6 +141,68 @@ export default function Hero() {
         </div>
       </motion.div>
 
+      {/* Floating Rating Pill */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8, ease: EASE_EXPO }}
+        className="absolute z-10 hidden md:flex"
+        style={{ bottom: "120px", right: "48px" }}
+      >
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="flex items-center gap-3 px-5 py-3 rounded-full"
+          style={{
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(16px) saturate(180%)",
+            WebkitBackdropFilter: "blur(16px) saturate(180%)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            boxShadow:
+              "0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset",
+          }}
+        >
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                style={{
+                  fontSize: "13px",
+                  color:
+                    star <= 4 ? "#f59e0b" : "rgba(245, 158, 11, 0.4)",
+                }}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+          <span
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "14px",
+              fontWeight: 700,
+              color: "white",
+            }}
+          >
+            4.53
+          </span>
+          <span
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "11px",
+              color: "rgba(255, 255, 255, 0.5)",
+              letterSpacing: "0.02em",
+            }}
+          >
+            7,000+ reviews
+          </span>
+        </motion.div>
+      </motion.div>
+
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -223,7 +285,7 @@ function MagneticButton() {
           fontFamily: "'DM Sans', system-ui, sans-serif",
           letterSpacing: "0.06em",
           fontSize: "13px",
-          boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+          boxShadow: "0 4px 24px rgba(239, 107, 95, 0.3)",
           textDecoration: "none",
         }}
       >

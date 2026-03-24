@@ -260,7 +260,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                       background: "var(--accent)",
                       fontSize: "14px",
                       letterSpacing: "0.06em",
-                      boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+                      boxShadow: "0 4px 24px rgba(239, 107, 95, 0.3)",
                     }}
                   >
                     {payment === "card" ? "PAY & PLACE ORDER" : "PLACE ORDER"}
@@ -275,7 +275,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, ease: EASE_EXPO }}
                   className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ background: "rgba(232, 100, 90, 0.15)" }}
+                  style={{ background: "rgba(239, 107, 95, 0.15)" }}
                 >
                   <span style={{ fontSize: "40px" }}>🔥</span>
                 </motion.div>

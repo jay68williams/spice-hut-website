@@ -23,10 +23,10 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
       style={{
         background: "var(--bg-surface)",
         border: quantity > 0
-          ? "1px solid rgba(232, 100, 90, 0.4)"
+          ? "1px solid rgba(239, 107, 95, 0.4)"
           : "1px solid var(--border)",
         boxShadow: quantity > 0
-          ? "0 0 16px rgba(232, 100, 90, 0.1), 0 4px 16px rgba(0, 0, 0, 0.3)"
+          ? "0 0 16px rgba(239, 107, 95, 0.1), 0 4px 16px rgba(0, 0, 0, 0.3)"
           : "0 4px 16px rgba(0, 0, 0, 0.2)",
         transition: "border-color 0.3s ease, box-shadow 0.3s ease",
       }}
@@ -38,7 +38,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
             <span
               className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide"
               style={{
-                background: "rgba(232, 100, 90, 0.15)",
+                background: "rgba(239, 107, 95, 0.15)",
                 color: "var(--accent)",
                 fontFamily: "'DM Sans', system-ui, sans-serif",
               }}
@@ -108,7 +108,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
               background: "var(--accent)",
               fontSize: "12px",
               letterSpacing: "0.08em",
-              boxShadow: "0 2px 12px rgba(232, 100, 90, 0.25)",
+              boxShadow: "0 2px 12px rgba(239, 107, 95, 0.25)",
             }}
           >
             ADD TO ORDER

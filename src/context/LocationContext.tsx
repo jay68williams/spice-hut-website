@@ -164,7 +164,7 @@ function LocationPickerModal() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.2, ease: EASE_EXPO }}
                 className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
-                style={{ background: "rgba(232, 100, 90, 0.15)" }}
+                style={{ background: "rgba(239, 107, 95, 0.15)" }}
               >
                 <span style={{ fontSize: "28px" }}>📍</span>
               </motion.div>
@@ -207,8 +207,8 @@ function LocationPickerModal() {
                       border: "1px solid var(--border)",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.4)";
-                      e.currentTarget.style.boxShadow = "0 0 16px rgba(232, 100, 90, 0.1)";
+                      e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.4)";
+                      e.currentTarget.style.boxShadow = "0 0 16px rgba(239, 107, 95, 0.1)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.borderColor = "var(--border)";

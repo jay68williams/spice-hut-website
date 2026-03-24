@@ -42,7 +42,7 @@ export default function MenuTeaser() {
         className="absolute top-0 left-0 right-0 h-64 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(232, 100, 90, 0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(239, 107, 95, 0.06) 0%, transparent 60%)",
         }}
       />
 
@@ -142,8 +142,8 @@ function MenuCard({ item }: { item: (typeof MENU_ITEMS)[0] }) {
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow =
-          "0 24px 64px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(232, 100, 90, 0.12)";
-        e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.3)";
+          "0 24px 64px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(239, 107, 95, 0.12)";
+        e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.3)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow =
@@ -156,7 +156,7 @@ function MenuCard({ item }: { item: (typeof MENU_ITEMS)[0] }) {
         className="absolute inset-[-1px] rounded-[21px] pointer-events-none z-0 opacity-0 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(232, 100, 90, 0.12), transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(239, 107, 95, 0.12), transparent 70%)",
           transition: "opacity 0.4s ease",
         }}
       />

@@ -24,7 +24,7 @@ export default function MenuPage() {
           className="px-6 md:px-12 py-12 md:py-20"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(232, 100, 90, 0.08) 0%, transparent 70%), var(--bg-base)",
+              "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(239, 107, 95, 0.08) 0%, transparent 70%), var(--bg-base)",
             borderBottom: "1px solid var(--border)",
           }}
         >
@@ -226,9 +226,9 @@ function BrowseMenuCard({ item }: { item: MenuItem }) {
         transition: "border-color 0.3s ease, box-shadow 0.3s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.25)";
+        e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.25)";
         e.currentTarget.style.boxShadow =
-          "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(232, 100, 90, 0.1)";
+          "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(239, 107, 95, 0.1)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.06)";
@@ -242,7 +242,7 @@ function BrowseMenuCard({ item }: { item: MenuItem }) {
             <span
               className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide"
               style={{
-                background: "rgba(232, 100, 90, 0.15)",
+                background: "rgba(239, 107, 95, 0.15)",
                 color: "var(--accent)",
                 fontFamily: "'DM Sans', system-ui, sans-serif",
               }}
@@ -299,18 +299,18 @@ function BrowseMenuCard({ item }: { item: MenuItem }) {
           style={{
             fontFamily: "'DM Sans', system-ui, sans-serif",
             color: "var(--accent)",
-            background: "rgba(232, 100, 90, 0.08)",
-            border: "1px solid rgba(232, 100, 90, 0.12)",
+            background: "rgba(239, 107, 95, 0.08)",
+            border: "1px solid rgba(239, 107, 95, 0.12)",
             textDecoration: "none",
             letterSpacing: "0.06em",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(232, 100, 90, 0.15)";
-            e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.3)";
+            e.currentTarget.style.background = "rgba(239, 107, 95, 0.15)";
+            e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.3)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(232, 100, 90, 0.08)";
-            e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.12)";
+            e.currentTarget.style.background = "rgba(239, 107, 95, 0.08)";
+            e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.12)";
           }}
         >
           Order Now

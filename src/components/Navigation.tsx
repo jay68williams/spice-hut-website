@@ -198,7 +198,7 @@ export default function Navigation() {
                     fontFamily: "'DM Sans', system-ui, sans-serif",
                     letterSpacing: "0.06em",
                     fontSize: "14px",
-                    boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+                    boxShadow: "0 4px 24px rgba(239, 107, 95, 0.3)",
                     textDecoration: "none",
                   }}
                 >

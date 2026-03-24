@@ -187,7 +187,7 @@ export default function OrderPage() {
                   background: "var(--accent)",
                   fontSize: "13px",
                   letterSpacing: "0.06em",
-                  boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+                  boxShadow: "0 4px 24px rgba(239, 107, 95, 0.3)",
                 }}
               >
                 <span

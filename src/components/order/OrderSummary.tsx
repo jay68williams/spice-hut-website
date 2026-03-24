@@ -318,7 +318,7 @@ export default function OrderSummary({ onCheckout }: OrderSummaryProps) {
             color: items.length > 0 ? "white" : "var(--text-muted)",
             fontSize: "13px",
             letterSpacing: "0.06em",
-            boxShadow: items.length > 0 ? "0 4px 24px rgba(232, 100, 90, 0.3)" : "none",
+            boxShadow: items.length > 0 ? "0 4px 24px rgba(239, 107, 95, 0.3)" : "none",
             cursor: items.length > 0 ? "pointer" : "not-allowed",
           }}
         >

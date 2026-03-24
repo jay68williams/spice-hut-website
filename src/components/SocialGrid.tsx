@@ -25,7 +25,7 @@ export default function SocialGrid() {
       className="relative py-24 md:py-32"
       style={{
         background:
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232, 100, 90, 0.08) 0%, transparent 70%), var(--bg-base)",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(239, 107, 95, 0.08) 0%, transparent 70%), var(--bg-base)",
       }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -96,9 +96,9 @@ function SocialTile({
           "border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.4)";
+        e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.4)";
         e.currentTarget.style.boxShadow =
-          "0 0 24px rgba(232, 100, 90, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4)";
+          "0 0 24px rgba(239, 107, 95, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.06)";

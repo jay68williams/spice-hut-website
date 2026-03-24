@@ -9,17 +9,17 @@
 /* ── Tailwind v4 Theme Extension ─────────── */
 @theme inline {
   /* Colour tokens */
-  --color-bg-base: #080808;
-  --color-bg-surface: #111111;
-  --color-bg-elevated: #181818;
+  --color-bg-base: #0E0E0E;
+  --color-bg-surface: #161616;
+  --color-bg-elevated: #1E1E1E;
   --color-bg-light: #F5F2EE;
-  --color-accent: #E8645A;
-  --color-accent-glow: rgba(232, 100, 90, 0.18);
-  --color-text-primary: #F0F0F0;
-  --color-text-secondary: #888888;
-  --color-text-muted: #444444;
-  --color-border-default: rgba(255, 255, 255, 0.06);
-  --color-border-hover: rgba(232, 100, 90, 0.4);
+  --color-accent: #EF6B5F;
+  --color-accent-glow: rgba(239, 107, 95, 0.22);
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A0A0A0;
+  --color-text-muted: #555555;
+  --color-border-default: rgba(255, 255, 255, 0.10);
+  --color-border-hover: rgba(239, 107, 95, 0.45);
 
   /* Font families */
   --font-display: 'Bebas Neue', system-ui, sans-serif;
@@ -37,17 +37,17 @@
 
 /* ── CSS Custom Properties ────────────────── */
 :root {
-  --bg-base: #080808;
-  --bg-surface: #111111;
-  --bg-elevated: #181818;
+  --bg-base: #0E0E0E;
+  --bg-surface: #161616;
+  --bg-elevated: #1E1E1E;
   --bg-light: #F5F2EE;
-  --accent: #E8645A;
-  --accent-glow: rgba(232, 100, 90, 0.18);
-  --text-primary: #F0F0F0;
-  --text-secondary: #888888;
-  --text-muted: #444444;
-  --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(232, 100, 90, 0.4);
+  --accent: #EF6B5F;
+  --accent-glow: rgba(239, 107, 95, 0.22);
+  --text-primary: #F5F5F5;
+  --text-secondary: #A0A0A0;
+  --text-muted: #555555;
+  --border: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(239, 107, 95, 0.45);
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -162,7 +162,7 @@ body::before {
 
 /* ── Image Treatment ──────────────────────── */
 .food-image {
-  filter: saturate(1.15) brightness(0.92) contrast(1.05);
+  filter: saturate(1.15) brightness(1.0) contrast(1.08);
 }
 
 .food-image-overlay {

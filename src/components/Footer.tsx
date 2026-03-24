@@ -56,7 +56,7 @@ export default function Footer() {
         className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(232, 100, 90, 0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(239, 107, 95, 0.06) 0%, transparent 60%)",
         }}
       />
 

@@ -18,7 +18,7 @@ export default function Locations() {
       className="relative py-24 md:py-32"
       style={{
         background:
-          "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(232, 100, 90, 0.08) 0%, transparent 70%), var(--bg-base)",
+          "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(239, 107, 95, 0.08) 0%, transparent 70%), var(--bg-base)",
       }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -133,8 +133,8 @@ function LocationCard({ location }: { location: LocationData }) {
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow =
-          "0 24px 64px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(232, 100, 90, 0.15)";
-        e.currentTarget.style.borderColor = "rgba(232, 100, 90, 0.4)";
+          "0 24px 64px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(239, 107, 95, 0.15)";
+        e.currentTarget.style.borderColor = "rgba(239, 107, 95, 0.4)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow =
@@ -147,7 +147,7 @@ function LocationCard({ location }: { location: LocationData }) {
         className="card-glow absolute inset-[-1px] rounded-[21px] pointer-events-none z-0 opacity-0 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(232, 100, 90, 0.15), transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(239, 107, 95, 0.15), transparent 70%)",
           transition: "opacity 0.4s ease",
         }}
       />
@@ -179,7 +179,7 @@ function LocationCard({ location }: { location: LocationData }) {
                 background:
                   isComingSoon
                     ? "rgba(100, 200, 100, 0.15)"
-                    : "rgba(232, 100, 90, 0.15)",
+                    : "rgba(239, 107, 95, 0.15)",
                 color: isComingSoon ? "#4ade80" : "var(--accent)",
                 fontFamily: "'DM Sans', system-ui, sans-serif",
               }}
