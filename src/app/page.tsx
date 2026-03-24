@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
+
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
 import MenuTeaser from "@/components/MenuTeaser";
 import Locations from "@/components/Locations";
 import SocialGrid from "@/components/SocialGrid";
@@ -13,7 +14,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <StatsBar />
         <MenuTeaser />
         <Locations />
         <SocialGrid />
@@ -23,3 +23,4 @@ export default function Home() {
     </>
   );
 }
+

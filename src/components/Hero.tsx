@@ -178,7 +178,7 @@ export default function Hero() {
  * Uses Framer Motion's useMotionValue + useSpring.
  */
 function MagneticButton() {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 200, damping: 20 });
@@ -204,26 +204,29 @@ function MagneticButton() {
   };
 
   return (
-    <motion.a
+    <motion.div
       ref={ref}
-      href="#order"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.3, ease: EASE_EXPO }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="px-8 py-3.5 rounded-full text-white text-sm font-semibold tracking-wider select-none cursor-pointer"
-      style={{
-        x: springX,
-        y: springY,
-        background: "var(--accent)",
-        fontFamily: "'DM Sans', system-ui, sans-serif",
-        letterSpacing: "0.06em",
-        fontSize: "13px",
-        boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
-      }}
+      style={{ x: springX, y: springY, display: "inline-block" }}
     >
-      ORDER NOW
-    </motion.a>
+      <a
+        href="/order"
+        className="px-8 py-3.5 rounded-full text-white text-sm font-semibold tracking-wider select-none cursor-pointer inline-block"
+        style={{
+          background: "var(--accent)",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
+          letterSpacing: "0.06em",
+          fontSize: "13px",
+          boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+          textDecoration: "none",
+        }}
+      >
+        ORDER NOW
+      </a>
+    </motion.div>
   );
 }

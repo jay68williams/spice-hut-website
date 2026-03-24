@@ -63,7 +63,7 @@ export default function CTABanner() {
           transition={{ duration: 0.6, delay: 0.2, ease: EASE_EXPO }}
         >
           <motion.a
-            href="#order"
+            href="/order"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.3, ease: EASE_EXPO }}

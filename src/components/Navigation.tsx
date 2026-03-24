@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { EASE_EXPO } from "@/lib/motion";
+import { useLocation } from "@/context/LocationContext";
 
 const NAV_LINKS = [
-  { label: "MENU", href: "#menu" },
+  { label: "MENU", href: "/menu" },
   { label: "LOCATIONS", href: "#locations" },
   { label: "ABOUT", href: "#about" },
   { label: "SOCIALS", href: "#socials" },
@@ -14,6 +16,7 @@ const NAV_LINKS = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { selectedLocation, setShowPicker } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 100);
@@ -56,13 +59,34 @@ export default function Navigation() {
         }}
       >
         {/* Wordmark */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-heading text-white text-xl tracking-tight select-none"
-          style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "20px" }}
+          style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "20px", textDecoration: "none" }}
         >
           Spice Hut
-        </a>
+        </Link>
+
+        {/* Location indicator */}
+        {selectedLocation && (
+          <button
+            onClick={() => setShowPicker(true)}
+            className="hidden md:flex items-center gap-1.5 cursor-pointer"
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "11px",
+              color: "var(--text-muted)",
+              background: "none",
+              border: "none",
+              padding: 0,
+            }}
+          >
+            <span style={{ fontSize: "12px" }}>📍</span>
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              {selectedLocation.name}
+            </span>
+          </button>
+        )}
 
         {/* Centre nav links — desktop */}
         <div className="hidden md:flex items-center gap-8">
@@ -74,20 +98,20 @@ export default function Navigation() {
         {/* Right side — CTA + Hamburger */}
         <div className="flex items-center gap-4">
           {/* CTA button */}
-          <motion.a
-            href="#order"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.3, ease: EASE_EXPO }}
-            className="hidden md:inline-flex text-white text-xs font-semibold tracking-wider px-6 py-2.5 rounded-full select-none"
-            style={{
-              background: "var(--accent)",
-              fontFamily: "'DM Sans', system-ui, sans-serif",
-              letterSpacing: "0.06em",
-            }}
-          >
-            ORDER NOW
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.3, ease: EASE_EXPO }}>
+            <Link
+              href="/order"
+              className="hidden md:inline-flex text-white text-xs font-semibold tracking-wider px-6 py-2.5 rounded-full select-none"
+              style={{
+                background: "var(--accent)",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                letterSpacing: "0.06em",
+                textDecoration: "none",
+              }}
+            >
+              ORDER NOW
+            </Link>
+          </motion.div>
 
           {/* Mobile hamburger */}
           <button
@@ -155,8 +179,7 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#order"
+              <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -165,18 +188,23 @@ export default function Navigation() {
                   delay: NAV_LINKS.length * 0.06,
                   ease: EASE_EXPO,
                 }}
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 px-10 py-4 rounded-full text-white text-sm font-semibold tracking-wider"
-                style={{
-                  background: "var(--accent)",
-                  fontFamily: "'DM Sans', system-ui, sans-serif",
-                  letterSpacing: "0.06em",
-                  fontSize: "14px",
-                  boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
-                }}
               >
-                ORDER NOW
-              </motion.a>
+                <Link
+                  href="/order"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-4 px-10 py-4 rounded-full text-white text-sm font-semibold tracking-wider inline-block"
+                  style={{
+                    background: "var(--accent)",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
+                    letterSpacing: "0.06em",
+                    fontSize: "14px",
+                    boxShadow: "0 4px 24px rgba(232, 100, 90, 0.3)",
+                    textDecoration: "none",
+                  }}
+                >
+                  ORDER NOW
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}

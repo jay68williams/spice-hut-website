@@ -2,34 +2,10 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 import { EASE_EXPO, staggerContainer, staggerChild } from "@/lib/motion";
-
-const LOCATIONS = [
-  {
-    name: "Newcastle City Centre",
-    address: "41 Grainger Street, NE1 5JE",
-    hours: "11am — 11pm daily",
-    phone: "0191 123 4567",
-  },
-  {
-    name: "Durham",
-    address: "12 Saddler Street, DH1 3NP",
-    hours: "11am — 10pm daily",
-    phone: "0191 234 5678",
-  },
-  {
-    name: "Sunderland",
-    address: "8 High Street West, SR1 3DP",
-    hours: "11am — 10pm daily",
-    phone: "0191 345 6789",
-  },
-  {
-    name: "Gateshead Quays",
-    address: "Baltic Quarter, NE8 3BA",
-    hours: "12pm — 11pm daily",
-    phone: "0191 456 7890",
-  },
-];
+import { LOCATIONS } from "@/lib/locations";
+import type { LocationData } from "@/lib/locations";
 
 export default function Locations() {
   const ref = useRef<HTMLDivElement>(null);
@@ -67,7 +43,7 @@ export default function Locations() {
             Find your nearest.
           </h2>
           <p
-            className="max-w-lg"
+            className="max-w-lg mb-6"
             style={{
               fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: "16px",
@@ -75,9 +51,52 @@ export default function Locations() {
               lineHeight: 1.7,
             }}
           >
-            8 locations across the North East. Walk in, order up, and sit down
+            6 locations across the North East. Walk in, order up, and sit down
             somewhere that feels right.
           </p>
+
+          {/* Consolidated rating banner */}
+          <div
+            className="inline-flex items-center gap-3 px-5 py-3 rounded-full"
+            style={{
+              background: "var(--bg-surface)",
+              border: "1px solid var(--border)",
+            }}
+          >
+            <div className="flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  style={{
+                    fontSize: "14px",
+                    color:
+                      star <= 4 ? "#f59e0b" : "rgba(245, 158, 11, 0.4)",
+                  }}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+            <span
+              style={{
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "var(--text-primary)",
+              }}
+            >
+              4.53
+            </span>
+            <span
+              style={{
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                fontSize: "12px",
+                color: "var(--text-muted)",
+              }}
+            >
+              from 7,000+ reviews across all locations
+            </span>
+          </div>
         </motion.div>
 
         {/* Location cards */}
@@ -85,7 +104,7 @@ export default function Locations() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {LOCATIONS.map((loc) => (
             <LocationCard key={loc.name} location={loc} />
@@ -96,17 +115,15 @@ export default function Locations() {
   );
 }
 
-function LocationCard({
-  location,
-}: {
-  location: (typeof LOCATIONS)[0];
-}) {
-  return (
+function LocationCard({ location }: { location: LocationData }) {
+  const isComingSoon = location.badge === "Coming soon";
+
+  const cardContent = (
     <motion.div
       variants={staggerChild}
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.3, ease: EASE_EXPO }}
-      className="relative rounded-[20px] overflow-hidden cursor-pointer group"
+      className="relative rounded-[20px] overflow-hidden cursor-pointer group h-full"
       style={{
         background: "var(--bg-surface)",
         border: "1px solid var(--border)",
@@ -143,24 +160,41 @@ function LocationCard({
 
       {/* Content */}
       <div className="relative z-[1] p-6 pl-8">
-        <h3
-          className="mb-2"
-          style={{
-            fontFamily: "'DM Sans', system-ui, sans-serif",
-            fontSize: "22px",
-            fontWeight: 600,
-            letterSpacing: "-0.01em",
-            color: "var(--text-primary)",
-          }}
-        >
-          {location.name}
-        </h3>
+        <div className="flex items-center gap-2 mb-2">
+          <h3
+            style={{
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: "20px",
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
+              color: "var(--text-primary)",
+            }}
+          >
+            {location.name}
+          </h3>
+          {location.badge && (
+            <span
+              className="px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide"
+              style={{
+                background:
+                  isComingSoon
+                    ? "rgba(100, 200, 100, 0.15)"
+                    : "rgba(232, 100, 90, 0.15)",
+                color: isComingSoon ? "#4ade80" : "var(--accent)",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+              }}
+            >
+              {location.badge}
+            </span>
+          )}
+        </div>
         <p
           className="mb-1"
           style={{
             fontFamily: "'DM Sans', system-ui, sans-serif",
-            fontSize: "14px",
+            fontSize: "13px",
             color: "var(--text-secondary)",
+            lineHeight: 1.5,
           }}
         >
           {location.address}
@@ -177,18 +211,48 @@ function LocationCard({
           >
             {location.hours}
           </span>
-          <span
+          {location.phone && (
+            <span
+              style={{
+                fontFamily: "'DM Sans', system-ui, sans-serif",
+                fontSize: "12px",
+                fontWeight: 500,
+                color: "var(--accent)",
+              }}
+            >
+              {location.phone}
+            </span>
+          )}
+        </div>
+
+        {/* "View" indicator on hover */}
+        {!isComingSoon && (
+          <div
+            className="mt-4 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{
               fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: "12px",
-              fontWeight: 500,
+              fontWeight: 600,
               color: "var(--accent)",
             }}
           >
-            {location.phone}
-          </span>
-        </div>
+            View hours, map & contact →
+          </div>
+        )}
       </div>
     </motion.div>
+  );
+
+  if (isComingSoon) {
+    return cardContent;
+  }
+
+  return (
+    <Link
+      href={`/locations/${location.slug}`}
+      style={{ textDecoration: "none", color: "inherit", display: "block" }}
+    >
+      {cardContent}
+    </Link>
   );
 }
